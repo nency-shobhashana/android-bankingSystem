@@ -98,6 +98,7 @@ public class TransferActivity extends AppCompatActivity implements View.OnClickL
             dstAccount.setBalance(dstAccount.getBalance() + amount);
         } else {
             transferError("Not having sufficient fund");
+            return false;
         }
 
         if(!isSameClient(srcAccount, dstAccount)){
@@ -112,7 +113,8 @@ public class TransferActivity extends AppCompatActivity implements View.OnClickL
         String message = amount + " is transfer to your " + dstAccount.getAccountNo() + " account" +
                 " from " + srcAccount.getAccountNo() + " account ";
         try {
-            MailService.sendEmail("Money credited", srcAccount.getEmailId(), dstAccount.getEmailId(), message);
+            MailService.sendEmail("Money credited",
+                    dstAccount.getEmailId(), message);
         } catch (Exception e) {
             e.printStackTrace();
         }

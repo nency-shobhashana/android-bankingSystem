@@ -11,7 +11,7 @@ import com.mailjet.client.transactional.response.SendEmailsResponse;
 public class MailService {
     private static final String TAG = "MailService";
 
-    public static void sendEmail(String subject, String from, String to, String message) {
+    public static void sendEmail(String subject, String to, String message) {
 
         ClientOptions options = ClientOptions.builder()
                 .apiKey(BuildConfig.MJ_APIKEY_PUBLIC)
@@ -23,7 +23,7 @@ public class MailService {
         TransactionalEmail message1 = TransactionalEmail
                 .builder()
                 .to(new SendContact(to))
-                .from(new SendContact(from))
+                .from(new SendContact("emailtonency@gmail.com", "Notification Eco Earth Bank"))
                 .htmlPart(message)
                 .subject(subject)
                 .build();

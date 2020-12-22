@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static Customer customer;
 
     TextView txtWelcome;
-    Button btnTransfer, btnPayUtility;
+    Button btnTransfer, btnPayUtility, btnLogout;
     ListView listViewAccount;
 
     @Override
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnTransfer = findViewById(R.id.btnTransfer);
         btnPayUtility = findViewById(R.id.btnPayUtility);
         listViewAccount = findViewById(R.id.listAccount);
+        btnLogout = findViewById(R.id.btnLogout);
     }
 
     private void initListener() {
@@ -57,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         btnPayUtility.setOnClickListener(v -> {
             Intent intent = new Intent(this, UtilityActivity.class);
             startActivity(intent);
+        });
+        btnLogout.setOnClickListener(view -> {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            MainActivity.customer = null;
         });
     }
 

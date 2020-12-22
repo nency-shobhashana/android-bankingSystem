@@ -123,13 +123,13 @@ public class UtilityActivity extends AppCompatActivity
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (view.getId() == R.id.choiceSp) {
+        if (parent == choiceSp) {
             if (utilityChoices.get(position).equals("Phone")) {
                 subscriptionId.setText("Phone number");
             } else {
                 subscriptionId.setText("Subscription no.");
             }
-        } else {
+        } else if(parent == accSp) {
             accountNum = accountNumber.get(position);
         }
     }

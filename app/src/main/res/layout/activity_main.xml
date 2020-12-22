@@ -11,49 +11,63 @@
         android:id="@+id/txtWelcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="18sp"
-        android:textStyle="bold"
         android:gravity="center"
-        android:text="Welcome"/>
+        android:text="Welcome"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="24dp" />
 
     <TextView
         android:id="@+id/txtYourAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
         android:layout_marginTop="24dp"
+        android:text="Your Accounts : "
+        android:textColor="#3F51B5"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="Your Accounts : "/>
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
+        tools:layout_editor_absoluteX="24dp" />
 
     <ListView
         android:id="@+id/listAccount"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnTransfer"
-        app:layout_constraintTop_toBottomOf="@+id/txtYourAccount"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTransfer"
+        app:layout_constraintTop_toBottomOf="@+id/txtYourAccount" />
 
     <Button
         android:id="@+id/btnTransfer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Transfer Money"
+        android:backgroundTint="#2196F3"
+        android:text="Transfer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnPayUtility"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnPayUtility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#2196F3"
         android:text="Pay Utility"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnTransfer"
+        app:layout_constraintEnd_toStartOf="@+id/btnLogout"
+        app:layout_constraintStart_toEndOf="@+id/btnTransfer" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@+id/btnPayUtility" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
