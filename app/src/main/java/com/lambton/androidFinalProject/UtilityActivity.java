@@ -136,7 +136,7 @@ public class UtilityActivity extends AppCompatActivity
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        Toast.makeText(getApplicationContext(), "Please select one option", Toast.LENGTH_LONG).show();
     }
 
     private class RadioButtonsAction implements View.OnClickListener {
